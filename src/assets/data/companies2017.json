@@ -3,9 +3,59 @@
         "title": "Nails Elite",
         "location": "Viale Trieste 66, 39100 Bolzano",
         "logoUrl": "assets/logos/nailselite.jpg",
-        "website": "http://www.nailselite.it/",
-        "discount": "15%",
+        "discount": "15",
         "description": "Sconto su tutti i prodotti",
+        "website": "http://www.nailselite.it/",
+        "facebook": null
+    },
+    {
+        "title": "Beauty Charme",
+        "location": "Via della Zecca, 17, Bolzano",
+        "logoUrl": "assets/logos/beautycharme-logo.png",
+        "discount": "10",
+        "description": "Auf alle Wohlfuehlbehandlungen",
+        "website": null,
+        "map": "https://goo.gl/maps/dmZq5kQ4xMH2",
+        "facebook": "https://www.facebook.com/Beauty-Charme-395633973883854/"
+    },
+    {
+        "title": "Cambusa del Lazzarone",
+        "location": "Via Dr. Josef Streiter, 2, Bolzano",
+        "logoUrl": "assets/logos/cambusa-lazzarone-logo.png",
+        "discount": "10",
+        "description": "Auf alle Wohlfuehlbehandlungen",
+        "website": null,
+        "map": "https://goo.gl/maps/2HC6suLRmwR2",
+        "facebook": null
+    },
+    {
+        "title": "Q8 - Notdurfter C&L Snc",
+        "location": "Siegmundskroner Str. 10, Bozen",
+        "logoUrl": "assets/logos/notdurfter-logo.png",
+        "discount": "10",
+        "description": "Auf chemische Produkte",
+        "website": null,
+        "map": "https://goo.gl/maps/TXKtTYU5xSv",
+        "facebook": null
+    },
+    {
+        "title": "Spyro's",
+        "location": "Via Milano 128a,  Bolzano",
+        "logoUrl": "assets/logos/spyros-logo.jpg",
+        "discount": "10",
+        "description": null,
+        "website": null,
+        "map": "https://goo.gl/maps/Q11jAxeDB1G2",
+        "facebook": null
+    },
+    {
+        "title": "Ottica made in Cadore",
+        "location": "Via Leonardo da Vinci, 16a, Bolzano",
+        "logoUrl": "assets/logos/ottica_made_in_cadore-logo.png",
+        "discount": "30",
+        "description": "10% su articoli elettronici, 30% su occhiali e lenti oftalmiche, promo 4x3 su liquidi e lenti a contatto.",
+        "website": "http://www.optick.it/index.php/de/",
+        "map": "https://goo.gl/maps/bcXQPGiNpsT2",
         "facebook": null
     }
 ]

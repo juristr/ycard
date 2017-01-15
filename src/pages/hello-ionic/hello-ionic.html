@@ -9,21 +9,23 @@
 
 <ion-content padding>
   <ion-card *ngFor="let company of companies">
-    <img src="{{ company.logoUrl }}">
-    <ion-card-content>
+    <ion-item>
       <ion-row>
         <ion-col>
-          <ion-card-title>
-            {{ company.title }}
-          </ion-card-title>
+          <h2>
+            <strong>{{ company.title }}</strong>
+          </h2>
         </ion-col>
         <ion-col>
-          <ion-card-title style="text-align:right;">
-            {{ company.discount }}
-          </ion-card-title>
+          <h2 style="text-align:right;">
+            {{ company.discount }}&nbsp;%
+          </h2>
         </ion-col>
       </ion-row>
-      <p>
+    </ion-item>
+    <img src="{{ company.logoUrl }}">
+    <ion-card-content>
+      <p *ngIf="company.description">
         {{ company.description }}
       </p>
     </ion-card-content>
@@ -31,18 +33,23 @@
     <ion-row>
       <ion-col *ngIf="company.website">
         <button ion-button icon-left clear small>
-        <ion-icon name="open"></ion-icon>
-        <div>Website</div>
-      </button>
+          <ion-icon name="open"></ion-icon>
+          <div>Website</div>
+        </button>
       </ion-col>
-      <ion-col *ngIf="company.location">
-        <button ion-button icon-left clear small>
-        <ion-icon name="map"></ion-icon>
-        <div>Show on map</div>
-      </button>
+      <ion-col *ngIf="company.facebook">
+        <a href="{{ company.facebook }}" ion-button icon-left clear small>
+          <ion-icon name="logo-facebook"></ion-icon>
+          <div>Facebook</div>
+        </a>
+      </ion-col>
+      <ion-col *ngIf="company.map">
+        <a href="{{ company.map }}" ion-button icon-left clear small>
+          <ion-icon name="map"></ion-icon>
+          <div>Show on map</div>
+        </a>
       </ion-col>
     </ion-row>
-
   </ion-card>
 
 </ion-content>
