@@ -2,13 +2,29 @@
 
   <ion-header>
     <ion-toolbar>
-      <ion-title>Pages</ion-title>
+      <ion-title>Yoseikan Card</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
+    <ion-list no-lines>
+      <ion-item>
+        <!--<ion-avatar item-left>
+          <img [src]="currentUser.photoURL">
+        </ion-avatar>-->
+        <h3>Welcome!</h3>
+        <p>
+          Enjoy the Yoseikan Card Offers!
+        </p>
+      </ion-item>
+    </ion-list>
+
     <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <ion-list-header>
+        Navigate
+      </ion-list-header>
+      <button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon item-left [name]="p.icon"></ion-icon>
         {{p.title}}
       </button>
     </ion-list>

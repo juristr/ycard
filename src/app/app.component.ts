@@ -6,6 +6,12 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
 import { AboutPage } from './../pages/about/about';
 
+export interface PageObj {
+  title: string;
+  component: any;
+  icon: string;
+  index?: number;
+};
 
 @Component({
   templateUrl: 'app.html'
@@ -15,20 +21,16 @@ export class MyApp {
 
   // make HelloIonicPage the root (or first) page
   rootPage: any = HelloIonicPage;
-  pages: Array<{title: string, component: any}>;
+  pages: PageObj[] = [
+    {title: 'Offers', component: HelloIonicPage, icon: 'bulb'},
+    {title: 'Yoseikan Card?', component: AboutPage, index: 1, icon: 'information-circle'}
+  ];
 
   constructor(
     public platform: Platform,
     public menu: MenuController
   ) {
     this.initializeApp();
-
-    // set our app's pages
-    this.pages = [
-      { title: 'Home', component: HelloIonicPage },
-      // { title: 'My First List', component: ListPage },
-      { title: 'Yoseikan Card?', component: AboutPage }
-    ];
   }
 
   initializeApp() {
