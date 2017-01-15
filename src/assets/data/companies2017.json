@@ -57,5 +57,55 @@
         "website": "http://www.optick.it/index.php/de/",
         "map": "https://goo.gl/maps/bcXQPGiNpsT2",
         "facebook": null
+    },
+    {
+        "title": "Dolores",
+        "location": "Via Capuccini, 9, Appiano",
+        "logoUrl": "assets/logos/dolores_kosmetik-logo.png",
+        "discount": "10",
+        "description": "Auf alle Behandungen",
+        "website": "http://www.dolores-eppan.it/",
+        "map": "https://goo.gl/maps/Bcc3oGVHpwq",
+        "facebook": null
+    },
+    {
+        "title": "Weißes Rössl",
+        "location": "J.G. Plazerstrasse 15, Eppan",
+        "logoUrl": "assets/logos/weissesroessl-logo.png",
+        "discount": null,
+        "description": "Kleines Getränk beim Pizzaessen oder Dosengetränk beim Abholen. Bibita piccola mangiando una pizza direttamente al posto, altrimenti una lattina",
+        "website": "http://www.weisses-roessl.it/",
+        "map": "https://goo.gl/maps/reDxbBPF1E82",
+        "facebook": null
+    },
+    {
+        "title": "Francesca Grienti - Dietista",
+        "location": "Via Dante 12b, Bolzano",
+        "logoUrl": "assets/logos/fancesca_grienti-logo.png",
+        "discount": "10",
+        "description": "10% auf Beratung - 10% su consulenza.",
+        "website": "http://www.weisses-roessl.it/",
+        "map": "https://goo.gl/maps/HSvf9Sn11Dv",
+        "facebook": null
+    },
+    {
+        "title": "Yoseikan Budo Eppan",
+        "location": "Eishalle Eppan, Via Capuccini 4, 39057 Eppan",
+        "logoUrl": "assets/logos/yoseikan.png",
+        "discount": "10",
+        "description": null,
+        "website": "http://www.asv-eppan.it/de/die-sektionen/kampfsport",
+        "map": "https://goo.gl/maps/mNTdc5t4aGn",
+        "facebook": null
+    },
+    {
+        "title": "Eviva Sports",
+        "location": "Maria Rastweg 1, Eppan",
+        "logoUrl": "assets/logos/evivasport-logo.jpeg",
+        "discount": "10",
+        "description": "Erwerb von Eviva VIP Card mit 10% Skonto auf Skiverleih + Service.",
+        "website": null,
+        "map": "https://goo.gl/maps/U47cC85zyQt",
+        "facebook": "https://www.facebook.com/evivasport"
     }
 ]
