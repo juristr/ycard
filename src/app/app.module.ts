@@ -3,6 +3,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
+import { AboutPage } from '../pages/about/about';
 import { ListPage } from '../pages/list/list';
 import { Companies } from '../providers/companies';
 
@@ -11,7 +12,8 @@ import { Companies } from '../providers/companies';
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    AboutPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -21,7 +23,8 @@ import { Companies } from '../providers/companies';
     MyApp,
     HelloIonicPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    AboutPage
   ],
   providers: [
     Companies,
