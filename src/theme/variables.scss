@@ -12,7 +12,11 @@ $font-path: "../assets/fonts";
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
-
+$toolbar-background:  #0C487C;
+$background-color: rgb(213,238, 247);
+$card-ios-background-color: #fff;
+$card-md-background-color: #fff;
+$card-wp-background-color: #fff;
 
 
 // Named Color Variables
@@ -24,7 +28,7 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #387ef5,
+  primary:    #0C487C,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -61,13 +65,12 @@ $colors: (
 // default are overridden.
 
 @import "ionic.theme.default";
-
+@import "ycard";
 
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/v2/ionicons/
-
 @import "ionicons";
 
 

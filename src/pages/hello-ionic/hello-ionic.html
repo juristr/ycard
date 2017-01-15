@@ -9,7 +9,7 @@
 
 <ion-content padding>
   <ion-card *ngFor="let company of companies">
-    <ion-item>
+    <ion-card-header>
       <ion-row>
         <ion-col>
           <h2>
@@ -22,7 +22,7 @@
           </h2>
         </ion-col>
       </ion-row>
-    </ion-item>
+    </ion-card-header>
     <img src="{{ company.logoUrl }}">
     <ion-card-content>
       <p *ngIf="company.description">
