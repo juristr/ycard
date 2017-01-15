@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Beauty & Wellness",
+    "type": "beauty"
+  },
+  {
+    "name": "Fashion & Shopping",
+    "type": "shopping"
+  },
+  {
+    "name": "Grocery",
+    "type": "grocery"
+  },
+  {
+    "name": "Gas Stations",
+    "type": "gasstations"
+  },
+  {
+    "name": "Sport",
+    "type": "sports"
+  },
+  {
+    "name": "Restaurants",
+    "type": "eating"
+  },
+  {
+    "name": "Other",
+    "type": "other"
+  }
+]

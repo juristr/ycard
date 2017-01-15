@@ -4,17 +4,46 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Yoseikan Card 2017</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentFilter()">
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-card *ngIf="companies && companies.length > 0">
     <ion-card-content>
-      <ion-icon name="star"></ion-icon>&nbsp;You're currently viewing {{ companies.length }} different offers!
+      <p>
+        <ion-icon name="star"></ion-icon>&nbsp;You're currently viewing <strong>{{ visibleOffersCount }} different offers</strong>!
+      </p>
+      <p *ngIf="shownCategories.length > 0">
+          <ion-badge color="secondary" *ngFor="let category of shownCategories">
+            {{ category.name }}&nbsp;<ion-icon name="close" (click)="removeCategory(category)"></ion-icon>
+          </ion-badge>
+        </p>
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngFor="let company of companies">
+  <ion-card *ngIf="visibleOffersCount === 0">
+    <ion-card-content>
+      <p>
+        Oops, seems there are no offers for the selected categories.
+      </p>
+      <ion-row>
+        <ion-col>
+          <button ion-button (click)="presentFilter()">Change filter</button>
+        </ion-col>
+        <ion-col >
+          <button ion-button color="light" (click)="resetFilter(event)">Clear filters</button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let company of companies" [hidden]="company.hidden">
     <ion-card-header>
       <ion-row>
         <ion-col>

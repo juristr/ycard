@@ -1,3 +1,4 @@
+import { CategoryFilterPage } from './../pages/category-filter/category-filter';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
@@ -13,7 +14,8 @@ import { Companies } from '../providers/companies';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    AboutPage
+    AboutPage,
+    CategoryFilterPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -24,7 +26,8 @@ import { Companies } from '../providers/companies';
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    AboutPage
+    AboutPage,
+    CategoryFilterPage
   ],
   providers: [
     Companies,

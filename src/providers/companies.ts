@@ -4,24 +4,37 @@ import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import 'rxjs/add/operator/map';
 
+export interface Category {
+  name: string;
+  type: string;
+}
+
+export interface Offer {
+  title: string;
+  category: string;
+  location: string;
+  logoUrl: string;
+  discount: string;
+  description: string;
+  website: string;
+  map: string;
+  facebook: string;
+  hidden: boolean;
+}
+
 @Injectable()
 export class Companies {
-  //  companies = [
-  //     {
-  //       title: 'Nails Elite',
-  //       location: 'Viale Trieste 66, 39100 Bolzano',
-  //       logoUrl: 'assets/logos/nailselite.jpg',
-  //       website: 'http://www.nailselite.it/',
-  //       discount: '15%',
-  //       description: 'Sconto su tutti i prodotti',
-  //       facebook: null
-  //     }
-  // ];
 
   constructor(public http: Http) {
   }
 
-  loadCompanies() : Observable<any> {
+  getCategories(): Observable<Category[]> {
+    return this.http
+      .get('/assets/data/categories.json')
+      .map(res => res.json());
+  }
+
+  loadCompanies() : Observable<Offer[]> {
     return this.http
         .get('/assets/data/companies2017.json')
         .map(res => res.json());
