@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 
+import { Settings } from './../../providers/settings.service';
+
 @Component({
   selector: 'page-settings',
   templateUrl: 'settings.html'
@@ -8,11 +10,11 @@ import {TranslateService} from '@ngx-translate/core';
 export class SettingsPage {
   currentLanguage;
 
-  constructor(private translate: TranslateService){
+  constructor(private translate: TranslateService, private settings: Settings){
     this.currentLanguage = translate.currentLang;
   }
 
   onLanguageChanged(value) {
-    this.translate.currentLang = value;
+    this.settings.setItem('appLanguage', value);
   }
 }

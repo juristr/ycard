@@ -4,6 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import {TranslateService} from '@ngx-translate/core';
 import { localizations } from './translations';
 
+import { Settings } from './../providers/settings.service';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { AboutPage } from './../pages/about/about';
 import { SettingsPage } from './../pages/settings/settings';
@@ -28,7 +29,8 @@ export class MyApp {
   constructor(
     public platform: Platform,
     public menu: MenuController,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private settings: Settings
   ) {
     this.initializeApp();
   }
@@ -43,7 +45,16 @@ export class MyApp {
 
     // set translation options
     this.translate.setDefaultLang('de');
-    this.translate.use('de');
+
+    this.settings
+      .getItem('appLanguage')
+      .subscribe(data => {
+        if (data.newValue) {
+          this.translate.use(data.newValue);
+        } else {
+          this.translate.use('de');
+        }
+      });
 
     // set languages
     this.translate.setTranslation('en', localizations['en']);
