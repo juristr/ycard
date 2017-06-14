@@ -1,15 +1,15 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons start>
-      <button ion-button (click)="dismiss()">Cancel</button>
+      <button ion-button (click)="dismiss()">{{ 'categoryfilter.menu.cancel' | translate }}</button>
     </ion-buttons>
 
     <ion-title>
-      Filter Categories
+      {{ 'categoryfilter.title' | translate }}
     </ion-title>
 
     <ion-buttons end>
-      <button ion-button (click)="applyFilters()">Done</button>
+      <button ion-button (click)="applyFilters()">{{ 'categoryfilter.menu.done' | translate }}</button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -19,7 +19,7 @@
   <ion-list>
     <ion-item *ngFor="let tag of tags" [attr.tag]="tag.category.name | lowercase">
       <span item-left class="dot"></span>
-      <ion-label>{{tag.category.name}}</ion-label>
+      <ion-label>{{tag.category["name_" + currentLanguage]}}</ion-label>
       <ion-toggle [(ngModel)]="tag.isChecked" color="secondary"></ion-toggle>
     </ion-item>
 
@@ -27,7 +27,7 @@
 
   <ion-list>
     <button ion-item (click)="resetFilters()" detail-none class="reset-filters">
-      Reset All Filters
+      {{ 'categoryfilter.menu.resetfilters' | translate }}
     </button>
   </ion-list>
 

@@ -1,9 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import {TranslateService} from '@ngx-translate/core';
+import { localizations } from './translations';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { AboutPage } from './../pages/about/about';
+import { SettingsPage } from './../pages/settings/settings';
 
 export interface PageObj {
   title: string;
@@ -20,14 +23,12 @@ export class MyApp {
 
   // make HelloIonicPage the root (or first) page
   rootPage: any = HelloIonicPage;
-  pages: PageObj[] = [
-    {title: 'Offers', component: HelloIonicPage, icon: 'bulb'},
-    {title: 'Yoseikan Card?', component: AboutPage, index: 1, icon: 'information-circle'}
-  ];
+  pages: PageObj[];
 
   constructor(
     public platform: Platform,
-    public menu: MenuController
+    public menu: MenuController,
+    private translate: TranslateService
   ) {
     this.initializeApp();
   }
@@ -39,6 +40,28 @@ export class MyApp {
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
+
+    // set translation options
+    this.translate.setDefaultLang('de');
+    this.translate.use('de');
+
+    // set languages
+    this.translate.setTranslation('en', localizations['en']);
+    this.translate.setTranslation('de', localizations['de']);
+
+    // init menu
+    this.translate.get([
+      'sidebar.menuitem.offers',
+      'sidebar.menuitem.about',
+      'sidebar.menuitem.settings'
+    ]).subscribe(translations => {
+      this.pages = [
+        {title: translations['sidebar.menuitem.offers'], component: HelloIonicPage, icon: 'bulb'},
+        {title: translations['sidebar.menuitem.about'], component: AboutPage, index: 1, icon: 'information-circle'},
+        {title: translations['sidebar.menuitem.settings'], component: SettingsPage, index: 1, icon: 'settings'}
+      ];
+    });
+
   }
 
   openPage(page) {

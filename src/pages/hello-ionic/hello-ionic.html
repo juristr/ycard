@@ -17,7 +17,7 @@
   <ion-card *ngIf="companies && companies.length > 0">
     <ion-card-content>
       <p>
-        <ion-icon name="star"></ion-icon>&nbsp;You're currently viewing <strong>{{ visibleOffersCount }} different offers</strong>!
+        <ion-icon name="star"></ion-icon>&nbsp;{{ 'notifications.filteredOffers' | translate:{value:visibleOffersCount} }}
       </p>
       <p *ngIf="shownCategories.length > 0">
           <ion-badge color="secondary" *ngFor="let category of shownCategories">
@@ -69,19 +69,19 @@
       <ion-col *ngIf="company.website">
         <a href="{{ company.website }}" ion-button icon-left clear small>
           <ion-icon name="open"></ion-icon>
-          <div>Website</div>
+          <div>{{ 'card.action.website' | translate }}</div>
         </a>
       </ion-col>
       <ion-col *ngIf="company.facebook">
         <a href="{{ company.facebook }}" ion-button icon-left clear small>
           <ion-icon name="logo-facebook"></ion-icon>
-          <div>Facebook</div>
+          <div>{{ 'card.action.facebook' | translate }}</div>
         </a>
       </ion-col>
       <ion-col *ngIf="company.map">
         <a href="{{ company.map }}" ion-button icon-left clear small>
           <ion-icon name="map"></ion-icon>
-          <div>Show on map</div>
+          <div>{{ 'card.action.map' | translate }}</div>
         </a>
       </ion-col>
     </ion-row>

@@ -1,8 +1,9 @@
-import { Category } from './../../providers/companies';
 // 3d party imports
+import { TranslateService } from '@ngx-translate/core';
 import { Component } from '@angular/core';
 import { NavParams, ViewController } from 'ionic-angular';
 
+import { Category } from './../../providers/companies';
 import { Companies } from '../../providers/companies';
 
 @Component({
@@ -10,13 +11,18 @@ import { Companies } from '../../providers/companies';
   templateUrl: 'category-filter.html'
 })
 export class CategoryFilterPage {
+  currentLanguage: string;
 
   tags: Array<{category: Category, isChecked: boolean}> = [];
 
   constructor(
               private conferenceData: Companies,
               private navParams: NavParams,
-              private viewCtrl: ViewController) {
+              private viewCtrl: ViewController,
+              private translate: TranslateService) {
+
+    this.currentLanguage = translate.currentLang;
+    console.log(this.currentLanguage);
 
     // passed in array of track names that should be shown (check)
     let shownTags = this.navParams.data.shownTags;

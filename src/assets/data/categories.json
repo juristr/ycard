@@ -1,30 +1,37 @@
 [
   {
-    "name": "Beauty & Wellness",
+    "name_en": "Beauty & Wellness",
+    "name_de": "Beauty & Wellness",
     "type": "beauty"
   },
   {
-    "name": "Fashion & Shopping",
+    "name_en": "Fashion & Shopping",
+    "name_de": "Fashion & Shopping",
     "type": "shopping"
   },
   {
-    "name": "Grocery",
+    "name_en": "Grocery",
+    "name_de": "Einkaufen",
     "type": "grocery"
   },
   {
-    "name": "Gas Stations",
+    "name_en": "Gas Stations",
+    "name_de": "Tankstellen",
     "type": "gasstations"
   },
   {
-    "name": "Sport",
+    "name_en": "Sport",
+    "name_de": "Sport",
     "type": "sports"
   },
   {
-    "name": "Restaurants",
+    "name_en": "Restaurants",
+    "name_de": "Restaurants, Bars,...",
     "type": "eating"
   },
   {
-    "name": "Other",
+    "name_en": "Other",
+    "name_de": "Sonstiges",
     "type": "other"
   }
 ]

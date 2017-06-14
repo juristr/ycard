@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'settings.title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>{{ 'settings.language' | translate }}</ion-label>
+      <ion-select
+          okText="{{ 'settings.okText' | translate }}"
+          cancelText="{{ 'settings.dismiss' | translate }}"
+          [ngModel]="currentLanguage"
+          (ngModelChange)="onLanguageChanged($event)"
+          >
+        <ion-option value="en">English</ion-option>
+        <ion-option value="de">Deutsch</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>
