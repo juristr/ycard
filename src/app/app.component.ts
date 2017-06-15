@@ -46,15 +46,17 @@ export class MyApp {
     // set translation options
     this.translate.setDefaultLang('de');
 
-    this.settings
-      .getItem('appLanguage')
-      .subscribe(data => {
-        if (data.newValue) {
-          this.translate.use(data.newValue);
-        } else {
-          this.translate.use('de');
-        }
-      });
+    // this.settings
+    //   .getItem('appLanguage')
+    //   .subscribe(data => {
+    //     if (data.newValue) {
+    //       this.translate.use(data.newValue);
+    //     } else {
+    //       this.translate.use('de');
+    //     }
+    //   });
+
+    this.translate.use('de');
 
     // set languages
     this.translate.setTranslation('en', localizations['en']);
