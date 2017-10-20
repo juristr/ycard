@@ -68,8 +68,8 @@
           </ion-card-header>
           <img class="company-logo" src="{{ company.logoUrl }}">
           <ion-card-content>
-            <p *ngIf="company.description">
-              {{ company.description }}
+            <p>
+              {{ resolveDescription(company) }}
             </p>
           </ion-card-content>
 

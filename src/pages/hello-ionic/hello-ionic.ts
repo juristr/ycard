@@ -27,6 +27,14 @@ export class HelloIonicPage {
     return category[`name_${this.language.currentLang}`];
   }
 
+  resolveDescription(company) {
+    if (company.description && company.description !== '') {
+      return company.description;
+    } else {
+      return 'auf alle Produkte - su tutti i prodotti';
+    }
+  }
+
   ionViewDidEnter() {
     this.updateOffers();
   }
