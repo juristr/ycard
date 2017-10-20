@@ -13,22 +13,21 @@ import { Companies } from '../../providers/companies';
 export class CategoryFilterPage {
   currentLanguage: string;
 
-  tags: Array<{category: Category, isChecked: boolean}> = [];
+  tags: Array<{ category: Category; isChecked: boolean }> = [];
 
   constructor(
-              private conferenceData: Companies,
-              private navParams: NavParams,
-              private viewCtrl: ViewController,
-              private translate: TranslateService) {
-
-    this.currentLanguage = translate.currentLang;
+    private conferenceData: Companies,
+    private navParams: NavParams,
+    private viewCtrl: ViewController,
+    private translate: TranslateService
+  ) {
+    this.currentLanguage = translate.currentLang.toLowerCase();
     console.log(this.currentLanguage);
 
     // passed in array of track names that should be shown (check)
     let shownTags = this.navParams.data.shownTags;
 
     this.conferenceData.getCategories().subscribe((tagNames: Category[]) => {
-
       let newCategory = [];
       tagNames.forEach(tagName => {
         let cat = {
@@ -37,7 +36,7 @@ export class CategoryFilterPage {
         };
 
         shownTags.forEach(t => {
-          if(t.type === cat.category.type) {
+          if (t.type === cat.category.type) {
             cat.isChecked = true;
             return;
           }
@@ -47,7 +46,6 @@ export class CategoryFilterPage {
       });
       this.tags = newCategory;
     });
-
   }
 
   resetFilters() {

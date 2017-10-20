@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Component } from '@angular/core';
 import { ModalController } from 'ionic-angular';
 import { Companies, Category, Offer } from './../../providers/companies';
@@ -14,12 +15,16 @@ export class HelloIonicPage {
 
   constructor(
     private companiesService: Companies,
-    private modalCtrl: ModalController) {
+    private modalCtrl: ModalController,
+    private language: TranslateService
+  ) {
+    this.companiesService.loadCompanies().subscribe(data => {
+      this.companies = data;
+    });
+  }
 
-  this.companiesService.loadCompanies()
-      .subscribe((data) => {
-        this.companies = data;
-      });
+  resolveCatName(category: Category) {
+    return category[`name_${this.language.currentLang}`];
   }
 
   ionViewDidEnter() {
@@ -29,10 +34,10 @@ export class HelloIonicPage {
   updateOffers() {
     let offersCount = 0;
     this.companies.forEach((offer: Offer) => {
-      if(this.shownCategories.length > 0) {
+      if (this.shownCategories.length > 0) {
         // filter only matching ones
-        this.shownCategories.forEach((cat:Category) => {
-          if(offer.category === cat.type) {
+        this.shownCategories.forEach((cat: Category) => {
+          if (offer.category === cat.type) {
             offer.hidden = false;
             offersCount++;
           } else {
@@ -50,7 +55,6 @@ export class HelloIonicPage {
   }
 
   presentFilter() {
-
     let modal = this.modalCtrl.create(CategoryFilterPage, {
       shownTags: this.shownCategories
     });
@@ -70,8 +74,9 @@ export class HelloIonicPage {
   }
 
   removeCategory(category: Category) {
-    this.shownCategories = this.shownCategories.filter((entry:Category) => entry.type !== category.type);
+    this.shownCategories = this.shownCategories.filter(
+      (entry: Category) => entry.type !== category.type
+    );
     this.updateOffers();
   }
-
 }

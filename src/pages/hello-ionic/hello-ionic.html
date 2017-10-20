@@ -20,10 +20,11 @@
         <ion-icon name="star"></ion-icon>&nbsp;{{ 'notifications.filteredOffers' | translate:{value:visibleOffersCount} }}
       </p>
       <p *ngIf="shownCategories.length > 0">
-          <ion-badge color="secondary" *ngFor="let category of shownCategories">
-            {{ category.name }}&nbsp;<ion-icon name="close" (click)="removeCategory(category)"></ion-icon>
-          </ion-badge>
-        </p>
+        <ion-badge color="secondary" *ngFor="let category of shownCategories">
+          {{ resolveCatName(category) }}&nbsp;
+          <ion-icon name="close" (click)="removeCategory(category)"></ion-icon>
+        </ion-badge>
+      </p>
     </ion-card-content>
   </ion-card>
 
@@ -36,7 +37,7 @@
         <ion-col>
           <button ion-button (click)="presentFilter()">Change filter</button>
         </ion-col>
-        <ion-col >
+        <ion-col>
           <button ion-button color="light" (click)="resetFilter(event)">Clear filters</button>
         </ion-col>
       </ion-row>
