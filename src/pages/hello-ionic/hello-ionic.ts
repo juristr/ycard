@@ -36,14 +36,15 @@ export class HelloIonicPage {
     this.companies.forEach((offer: Offer) => {
       if (this.shownCategories.length > 0) {
         // filter only matching ones
-        this.shownCategories.forEach((cat: Category) => {
-          if (offer.category === cat.type) {
-            offer.hidden = false;
-            offersCount++;
-          } else {
-            offer.hidden = true;
-          }
-        });
+        const matchesCategory =
+          this.shownCategories.find(x => x.type === offer.category) !== undefined;
+
+        if (matchesCategory) {
+          offer.hidden = false;
+          offersCount++;
+        } else {
+          offer.hidden = true;
+        }
       } else {
         // reset
         offer.hidden = false;
