@@ -1,4 +1,9 @@
 page-hello-ionic {
+  // ion-content {
+  //   margin: 0 auto;
+  //   max-width: 500px;
+  // }
+
   ion-badge {
     margin-left: 5px;
     margin-bottom: 5px;
@@ -7,7 +12,6 @@ page-hello-ionic {
   .close-button {
     position: absolute;
     right: 5px;
-    top:5px;
+    top: 5px;
   }
-
 }

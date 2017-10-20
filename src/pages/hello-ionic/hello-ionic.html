@@ -14,78 +14,88 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngIf="companies && companies.length > 0">
-    <ion-card-content>
-      <p>
-        <ion-icon name="star"></ion-icon>&nbsp;{{ 'notifications.filteredOffers' | translate:{value:visibleOffersCount} }}
-      </p>
-      <p *ngIf="shownCategories.length > 0">
-        <ion-badge color="secondary" *ngFor="let category of shownCategories">
-          {{ resolveCatName(category) }}&nbsp;
-          <ion-icon name="close" (click)="removeCategory(category)"></ion-icon>
-        </ion-badge>
-      </p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card *ngIf="visibleOffersCount === 0">
-    <ion-card-content>
-      <p>
-        Oops, seems there are no offers for the selected categories.
-      </p>
-      <ion-row>
-        <ion-col>
-          <button ion-button (click)="presentFilter()">Change filter</button>
-        </ion-col>
-        <ion-col>
-          <button ion-button color="light" (click)="resetFilter(event)">Clear filters</button>
-        </ion-col>
-      </ion-row>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card *ngFor="let company of companies" [hidden]="company.hidden">
-    <ion-card-header>
-      <ion-row>
-        <ion-col>
-          <h2>
-            <strong>{{ company.title }}</strong>
-          </h2>
-        </ion-col>
-        <ion-col *ngIf="company.discount">
-          <h2 style="text-align:right;">
-            {{ company.discount }}&nbsp;%
-          </h2>
-        </ion-col>
-      </ion-row>
-    </ion-card-header>
-    <img src="{{ company.logoUrl }}">
-    <ion-card-content>
-      <p *ngIf="company.description">
-        {{ company.description }}
-      </p>
-    </ion-card-content>
+  <ion-grid>
+    <ion-row>
+      <ion-card *ngIf="companies && companies.length > 0">
+        <ion-card-content>
+          <p>
+            <ion-icon name="star"></ion-icon>&nbsp;{{ 'notifications.filteredOffers' | translate:{value:visibleOffersCount} }}
+          </p>
+          <p *ngIf="shownCategories.length > 0">
+            <ion-badge color="secondary" *ngFor="let category of shownCategories">
+              {{ resolveCatName(category) }}&nbsp;
+              <ion-icon name="close" (click)="removeCategory(category)"></ion-icon>
+            </ion-badge>
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
 
     <ion-row>
-      <ion-col *ngIf="company.website">
-        <a href="{{ company.website }}" ion-button icon-left clear small>
-          <ion-icon name="open"></ion-icon>
-          <div>{{ 'card.action.website' | translate }}</div>
-        </a>
-      </ion-col>
-      <ion-col *ngIf="company.facebook">
-        <a href="{{ company.facebook }}" ion-button icon-left clear small>
-          <ion-icon name="logo-facebook"></ion-icon>
-          <div>{{ 'card.action.facebook' | translate }}</div>
-        </a>
-      </ion-col>
-      <ion-col *ngIf="company.map">
-        <a href="{{ company.map }}" ion-button icon-left clear small>
-          <ion-icon name="map"></ion-icon>
-          <div>{{ 'card.action.map' | translate }}</div>
-        </a>
+      <ion-card *ngIf="visibleOffersCount === 0">
+        <ion-card-content>
+          <p>
+            Oops, seems there are no offers for the selected categories.
+          </p>
+          <ion-row>
+            <ion-col>
+              <button ion-button (click)="presentFilter()">Change filter</button>
+            </ion-col>
+            <ion-col>
+              <button ion-button color="light" (click)="resetFilter(event)">Clear filters</button>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+
+    <ion-row wrap>
+      <ion-col width-300 *ngFor="let company of companies" [hidden]="company.hidden">
+        <ion-card>
+          <ion-card-header>
+            <ion-row>
+              <ion-col>
+                <h2>
+                  <strong>{{ company.title }}</strong>
+                </h2>
+              </ion-col>
+              <ion-col *ngIf="company.discount">
+                <h2 style="text-align:right;">
+                  {{ company.discount }}&nbsp;%
+                </h2>
+              </ion-col>
+            </ion-row>
+          </ion-card-header>
+          <img class="company-logo" src="{{ company.logoUrl }}">
+          <ion-card-content>
+            <p *ngIf="company.description">
+              {{ company.description }}
+            </p>
+          </ion-card-content>
+
+          <ion-row>
+            <ion-col *ngIf="company.website">
+              <a href="{{ company.website }}" ion-button icon-left clear small>
+                <ion-icon name="open"></ion-icon>
+                <div>{{ 'card.action.website' | translate }}</div>
+              </a>
+            </ion-col>
+            <ion-col *ngIf="company.facebook">
+              <a href="{{ company.facebook }}" ion-button icon-left clear small>
+                <ion-icon name="logo-facebook"></ion-icon>
+                <div>{{ 'card.action.facebook' | translate }}</div>
+              </a>
+            </ion-col>
+            <ion-col *ngIf="company.map">
+              <a href="{{ company.map }}" ion-button icon-left clear small>
+                <ion-icon name="map"></ion-icon>
+                <div>{{ 'card.action.map' | translate }}</div>
+              </a>
+            </ion-col>
+          </ion-row>
+        </ion-card>
       </ion-col>
     </ion-row>
-  </ion-card>
+  </ion-grid>
 
 </ion-content>

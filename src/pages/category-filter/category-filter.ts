@@ -22,7 +22,6 @@ export class CategoryFilterPage {
     private translate: TranslateService
   ) {
     this.currentLanguage = translate.currentLang.toLowerCase();
-    console.log(this.currentLanguage);
 
     // passed in array of track names that should be shown (check)
     let shownTags = this.navParams.data.shownTags;
