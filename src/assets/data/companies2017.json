@@ -46,7 +46,7 @@
   {
     "title": "Maglieria Center Moda",
     "category": "shopping",
-    "location": "Via Portici 63 (Lauben), Bolzano",
+    "location": "L. da Vinci, Bolzano",
     "logoUrl": "assets/logos/mcm-logo.png",
     "discount": "10",
     "description": null,
@@ -74,17 +74,6 @@
     "description": "15% su tutti i prodotti, 10% sui pannolini",
     "website": "http://www.spacciopannolinibolzano.it/",
     "map": "https://goo.gl/maps/37on4AcFY4w",
-    "facebook": null
-  },
-  {
-    "title": "Pizzeria Saint Patrick",
-    "category": "eating",
-    "location": "Via Fago 46c,  Bolzano",
-    "logoUrl": "assets/logos/pizzeria-saint-patrick-logo.png",
-    "discount": "",
-    "description": "1 Dose zu 33ml je Pizza - 1 latina a 33cl ogni pizza",
-    "website": "http://www.spacciopannolinibolzano.it/",
-    "map": "https://goo.gl/maps/HqTyF2JyBCS2",
     "facebook": null
   },
   {
@@ -124,12 +113,12 @@
   {
     "title": "Spyro's",
     "category": "beauty",
-    "location": "Via Milano 128a,  Bolzano",
+    "location": "Via Torino 48,  Bolzano",
     "logoUrl": "assets/logos/spyros-logo.jpg",
     "discount": "10",
     "description": null,
     "website": null,
-    "map": "https://goo.gl/maps/Q11jAxeDB1G2",
+    "map": "https://goo.gl/maps/s3SosCHVo3y",
     "facebook": null
   },
   {
@@ -300,21 +289,10 @@
     "facebook": null
   },
   {
-    "title": "Schuh biduu",
-    "category": "shopping",
-    "location": "Rathausplatz 15, Eppan",
-    "logoUrl": "assets/logos/schubiduu-logo.png",
-    "discount": "5",
-    "description": null,
-    "website": null,
-    "map": "https://goo.gl/maps/gZcYMMdD4Ln",
-    "facebook": "https://www.facebook.com/Schuhbiduu-1424128941167871/"
-  },
-  {
     "title": "Flaim Optic",
     "category": "shopping",
     "location": "Goldgasse 28a, Kaltern",
-    "logoUrl": "assets/logos/schubiduu-logo.png",
+    "logoUrl": "assets/logos/flaim-optic-logo.jpg",
     "discount": "10",
     "description": null,
     "website": null,
