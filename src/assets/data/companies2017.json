@@ -139,7 +139,8 @@
     "location": "Maria Rastweg 1, Eppan",
     "logoUrl": "assets/logos/evivasport-logo.jpeg",
     "discount": "10",
-    "description": "Erwerb von Eviva VIP Card mit 10% Skonto auf Skiverleih + Service.",
+    "description":
+      "Erwerb von Eviva VIP Card mit 10% Skonto auf Skiverleih + Service.",
     "website": null,
     "map": "https://goo.gl/maps/U47cC85zyQt",
     "facebook": "https://www.facebook.com/evivasport"
@@ -172,7 +173,8 @@
     "location": "Via Innerhofer Josef 23, Eppan",
     "logoUrl": "assets/logos/meraner-pisoni.jpg",
     "discount": "",
-    "description": "10% Skonto Herren- und Damenschuhe - 10% di sconto su scarpe da uomo/donna",
+    "description":
+      "10% Skonto Herren- und Damenschuhe - 10% di sconto su scarpe da uomo/donna",
     "website": null,
     "map": "https://goo.gl/maps/3nNgLd1DAqC2",
     "facebook": null
@@ -349,7 +351,8 @@
     "location": "Hauptstraße 102, Terlan",
     "logoUrl": "assets/logos/esso_oberrauch-logo.png",
     "discount": "10",
-    "description": "10% Skonto auf Reifen und Zubehör- 10% di sconto su gomme e accessori",
+    "description":
+      "10% Skonto auf Reifen und Zubehör- 10% di sconto su gomme e accessori",
     "website": null,
     "map": "https://goo.gl/maps/4U4weLHFT9k",
     "facebook": null
@@ -415,7 +418,8 @@
     "location": "Am Gries 13, Lana",
     "logoUrl": "assets/logos/optikvision-logo.jpg",
     "discount": "10",
-    "description": "10% Skonto - 10% di sconto, Seh- und Sonnenbrillen - Occhali da vista/sole",
+    "description":
+      "10% Skonto - 10% di sconto, Seh- und Sonnenbrillen - Occhali da vista/sole",
     "website": "http://optikvisionlana.com/",
     "map": "https://goo.gl/maps/4oVLaRS2Bin",
     "facebook": null
@@ -582,7 +586,8 @@
     "location": "Industriezone 1/5c, Lana",
     "logoUrl": "assets/logos/Biokistl_logo.png",
     "discount": "10",
-    "description": "10% Skonto auf Obst und Gemüse, 10% di sconto su frutta e verdura",
+    "description":
+      "10% Skonto auf Obst und Gemüse, 10% di sconto su frutta e verdura",
     "website": "http://www.biokistl.it/",
     "map": "https://goo.gl/maps/QfcWGeWRz7C2",
     "facebook": null
@@ -597,6 +602,50 @@
       "10% Skonto Einkauf auf Papierwaren und Geschenkartikel, 10% di sconto su articoli di carta e da regalo",
     "website": "http://www.terzer-papier.com/",
     "map": "https://goo.gl/maps/krEcjvUi33S2",
+    "facebook": null
+  },
+  {
+    "title": "Ars-Flrensis",
+    "category": "shopping",
+    "location": "Sonnengasse 1, St. Michael, Eppan",
+    "logoUrl": "assets/logos/ars-florensis-logo.png",
+    "discount": "5",
+    "description": null,
+    "website": "http://ars-florensis.com/",
+    "map": "https://goo.gl/maps/5tPDYN2hU3J2",
+    "facebook": null
+  },
+  {
+    "title": "Small & X-Large Fashion",
+    "category": "shopping",
+    "location": "J. G. Plazer Straße 7, Eppan",
+    "logoUrl": "assets/logos/xlarge-logo.png",
+    "discount": "5",
+    "description": null,
+    "website": "http://www.small-xlarge.com/",
+    "map": "https://goo.gl/maps/9spxw2LEThS2",
+    "facebook": null
+  },
+  {
+    "title": "Tobike d. Rauch Gottfried",
+    "category": "shopping",
+    "location": "Vilpianerstr. 14, Nals",
+    "logoUrl": "assets/logos/tobike-logo.png",
+    "discount": "10",
+    "description": "5% auf Fahrräder, 10% auf Zubehör und Bekleidung",
+    "website": "http://www.tobike-nals.it/",
+    "map": "https://goo.gl/maps/c7DD3cVnMZD2",
+    "facebook": "https://www.facebook.com/TobikeNals/"
+  },
+  {
+    "title": "Gratl Juwelier",
+    "category": "shopping",
+    "location": "Via Andreas Hofer-Str.14, Caldaro/Kaltern",
+    "logoUrl": "assets/logos/gratl-logo.jpg",
+    "discount": "10",
+    "description": "Su orologi e gioelli di moda",
+    "website": null,
+    "map": "https://goo.gl/maps/LyYRiqn5wpJ2",
     "facebook": null
   }
 ]
