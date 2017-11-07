@@ -58,37 +58,40 @@ export class MyApp {
     // set languages
     this.translate.setTranslation('en', localizations['en']);
     this.translate.setTranslation('de', localizations['de']);
-
-    this.translate.use(this.settings.getItem('appLanguage', 'de'));
+    this.translate.setTranslation('it', localizations['it']);
 
     // init menu
-    this.translate
-      .get([
-        'sidebar.menuitem.offers',
-        'sidebar.menuitem.about',
-        'sidebar.menuitem.settings'
-      ])
-      .subscribe(translations => {
-        this.pages = [
-          {
-            title: translations['sidebar.menuitem.offers'],
-            component: HelloIonicPage,
-            icon: 'bulb'
-          },
-          {
-            title: translations['sidebar.menuitem.about'],
-            component: AboutPage,
-            index: 1,
-            icon: 'information-circle'
-          },
-          {
-            title: translations['sidebar.menuitem.settings'],
-            component: SettingsPage,
-            index: 1,
-            icon: 'settings'
-          }
-        ];
-      });
+    this.translate.onLangChange.subscribe(() => {
+      this.translate
+        .get([
+          'sidebar.menuitem.offers',
+          'sidebar.menuitem.about',
+          'sidebar.menuitem.settings'
+        ])
+        .subscribe(translations => {
+          this.pages = [
+            {
+              title: translations['sidebar.menuitem.offers'],
+              component: HelloIonicPage,
+              icon: 'bulb'
+            },
+            {
+              title: translations['sidebar.menuitem.about'],
+              component: AboutPage,
+              index: 1,
+              icon: 'information-circle'
+            },
+            {
+              title: translations['sidebar.menuitem.settings'],
+              component: SettingsPage,
+              index: 1,
+              icon: 'settings'
+            }
+          ];
+        });
+    });
+
+    this.translate.use(this.settings.getItem('appLanguage', 'de'));
   }
 
   openPage(page) {
