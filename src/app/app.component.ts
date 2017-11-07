@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import {TranslateService} from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { localizations } from './translations';
 
 import { Settings } from './../providers/settings.service';
@@ -14,7 +14,7 @@ export interface PageObj {
   component: any;
   icon: string;
   index?: number;
-};
+}
 
 @Component({
   templateUrl: 'app.html'
@@ -46,35 +46,49 @@ export class MyApp {
     // set translation options
     this.translate.setDefaultLang('de');
 
-    // this.settings
-    //   .getItem('appLanguage')
-    //   .subscribe(data => {
-    //     if (data.newValue) {
-    //       this.translate.use(data.newValue);
-    //     } else {
-    //       this.translate.use('de');
-    //     }
-    //   });
-
-    this.translate.use('de');
+    // this.settings.getItem('appLanguage').subscribe(data => {
+    //   console.log(data);
+    //   if (data.newValue) {
+    //     this.translate.use(data.newValue);
+    //   } else {
+    //     this.translate.use('de');
+    //   }
+    // });
 
     // set languages
     this.translate.setTranslation('en', localizations['en']);
     this.translate.setTranslation('de', localizations['de']);
 
-    // init menu
-    this.translate.get([
-      'sidebar.menuitem.offers',
-      'sidebar.menuitem.about',
-      'sidebar.menuitem.settings'
-    ]).subscribe(translations => {
-      this.pages = [
-        {title: translations['sidebar.menuitem.offers'], component: HelloIonicPage, icon: 'bulb'},
-        {title: translations['sidebar.menuitem.about'], component: AboutPage, index: 1, icon: 'information-circle'},
-        {title: translations['sidebar.menuitem.settings'], component: SettingsPage, index: 1, icon: 'settings'}
-      ];
-    });
+    this.translate.use(this.settings.getItem('appLanguage', 'de'));
 
+    // init menu
+    this.translate
+      .get([
+        'sidebar.menuitem.offers',
+        'sidebar.menuitem.about',
+        'sidebar.menuitem.settings'
+      ])
+      .subscribe(translations => {
+        this.pages = [
+          {
+            title: translations['sidebar.menuitem.offers'],
+            component: HelloIonicPage,
+            icon: 'bulb'
+          },
+          {
+            title: translations['sidebar.menuitem.about'],
+            component: AboutPage,
+            index: 1,
+            icon: 'information-circle'
+          },
+          {
+            title: translations['sidebar.menuitem.settings'],
+            component: SettingsPage,
+            index: 1,
+            icon: 'settings'
+          }
+        ];
+      });
   }
 
   openPage(page) {

@@ -1,35 +1,56 @@
+import { AppSettingEvent } from './settings.service';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/groupBy';
 import 'rxjs/add/operator/filter';
 
 export interface AppSettingEvent {
-  key: string,
-  newValue: any;
-  oldValue: any;
+  key: string;
+  value: any;
 }
 
 @Injectable()
 export class Settings {
-  subject: Subject<AppSettingEvent>;
-  updates: Observable<any>;
+  data: Object;
+  // subject: BehaviorSubject<AppSettingEvent[]>;
+  // updates: Observable<any>;
 
   constructor() {
-    this.subject = new Subject();
-    this.updates = this.subject.groupBy(x=>x.key).share();
+    try {
+      this.data = JSON.parse(localStorage.getItem('ycard.appsettings'));
+    } catch (e) {
+      console.error('Error reading local storage data', e);
+    }
+
+    if (!this.data) {
+      this.data = {};
+    }
+    // this.subject = new BehaviorSubject(JSON.parse(
+    //   localStorage.getItem('ycard.appsettings')
+    // ) as AppSettingEvent[]);
+    // this.subject = new BehaviorSubject({ key: 'app init' } as AppSettingEvent);
+    // this.updates = this.subject.groupBy(x => x.key).share();
   }
 
-  getItem(key) {
-    return this.updates.filter(x => x.key === key).merge();
+  getItem(key, defaultValue = null) {
+    if (this.data[key]) {
+      return this.data[key];
+    } else {
+      return defaultValue;
+    }
+    // return this.subject.filter(x => x.key === key).merge();
   }
 
   setItem(key, newValue) {
-    const oldValue = localStorage.getItem(key);
-    const event = { key, newValue, oldValue };
+    this.data[key] = newValue;
+    this.updateStorage();
+    // const oldValue = localStorage.getItem(key);
+    // const event = { key, newValue, oldValue };
+    // localStorage.setItem(key, newValue);
+    // this.subject.next(event);
+  }
 
-    localStorage.setItem(key, newValue);
-
-    this.subject.next(event);
+  private updateStorage() {
+    localStorage.setItem('ycard.appsettings', JSON.stringify(this.data));
   }
 }
