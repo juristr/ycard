@@ -647,5 +647,16 @@
     "website": null,
     "map": "https://goo.gl/maps/LyYRiqn5wpJ2",
     "facebook": null
-  }
+  },
+  {
+    "title": "Goldener Stern",
+    "category": "eating",
+    "location": "Kaltern am See",
+    "logoUrl": "assets/logos/goldener-stern.png",
+    "discount": "10",
+    "description": "auf das Essen im Restaurant/Pizzeria",
+    "website": "http://www.goldener-stern.org/",
+    "map": "https://goo.gl/maps/4oZi515EdUA2",
+    "facebook": null
+  }  
 ]
